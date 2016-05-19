@@ -7,10 +7,9 @@
 // const Wit = require('node-wit').Wit;
 const http = require('http');
 const querystring = require('querystring');
-function sendMeteor(path, methodType ,postData){
+function sendMeteor(path, methodType ,postData, cb){
     var options = {
-        hostname: 'localhost',
-        port: 3000,
+        hostname: 'https://46fc683c.ngrok.io',
         path: '/' + path,
         method: methodType,
         headers: {
@@ -45,7 +44,7 @@ var unkownData = JSON.stringify({
 });
 var processData = JSON.stringify({
     processType: "garbage",
-    location: "היבוק",
-    userId: '977048099078691'
+    location: "זבולון",
+    userId: '977048099078695'
 });
 sendMeteor('/clean-garbage', 'POST', processData);
